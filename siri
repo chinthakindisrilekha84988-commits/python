@@ -1,0 +1,42 @@
+#program1
+print(" a poultry farm has group of hens and cows together we need to find no of hens and cows sepoerately if total no of legs and heads are given")
+legs=int(input("enter legs:"))
+heads=int(input("enter heads:"))
+flag=False
+for cows in range(heads+1):
+    hens=heads-cows
+    cal_legs=cows*4+hens*2
+    if cal_legs==legs:
+        flag=True
+        break
+if flag:
+    print("cows",cows)
+    print("hens",hens)
+else:
+    print("no solution")
+#program2 and program3
+import calendar
+a=int(input("enter an year"))
+b=int(input("enter month"))
+res=calendar.calendar(a)
+
+print(res)
+calen=calendar.month(a,b)
+print(calen)
+from datetime import date
+a=date(2005,2,2)
+b=date(2026,4,28)
+print("No of days he lived:",(b-a).total_seconds()/3600)
+print("day1:both for and while")
+print("day2:nested loops")
+print("day4:collections")
+print("day5:functions")
+print("day6:recursion")
+#program3
+for i in range(100,1000):
+    c=0
+    for j in range(2,i):
+        if i%j==0:
+            c+=1
+    if c==0:
+        print(i,end=" ")
