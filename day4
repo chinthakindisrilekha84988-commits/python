@@ -1,0 +1,84 @@
+#convert string to int
+a="abcd"
+l=[ord(i) for i in a]
+print(l)
+
+
+
+#append no to list
+a=[12,13,4,23,32]
+b=sorted(a)
+print(a)
+
+
+#convert digits to dtring
+a=[chr(i) for i in range(65,91) if chr(i) not in  "AEIOU"]
+print(a)
+
+
+#tell me hhhhow to find max no
+a=6789
+b=[int(i) for i in str(a)]
+print(max(b))
+
+
+#pritning all marks and names correspondingly
+names=["AA","BB","CC","DD","EE"]
+marks=[78,23,56,23,56]
+pos=1
+for i in range(5):
+    if marks[i]>40:
+        print("{}.{} has scored ()%".format(pos,names[i],marks[i]))
+        pos=pos+1
+
+
+names=["raM","RAJ","rose","JacK","Pavi"]
+marks=[[45,23,45],[34,57,86],[89,45,90],[57,97,35],[66,75,34]]
+for i in range(5):
+    s=sum(marks[i])//3
+    if s>80:
+        g="S"
+    elif s<40:
+        g="F"
+    elif s<40 and s<60:
+        g="B"
+    else:
+        g="A"
+    print("{}.Mr/Ms {} has scored {}% - {} Grade".format(i+1,names[i].title(),s,g))
+
+
+
+#we are using zip to sort the tuples values in order wise like dictionary
+names=["raM","RAJ","rose","jack","pavi"]
+age=[34,21,67,37,12]
+res1=zip(age,names)
+res=sorted(res1)
+print(res)
+pos=1
+for i in res:
+    print("Rank {}:{} age is {} yrs old".format(pos,i[1],i[0]))
+    pos+=1
+
+#using random setting cricket match between ipl teams
+import random
+print("-----------setting cricket match between ipl teams-------------------")
+
+a=int(input("enter num of teams:"))
+teams=[]
+print("---------------------Enter all team name----------------------")
+for i in range(a):
+    t=input("enter team name:")
+    teams.append(t)  
+m=int(input("enter no of meet bw teams:"))
+matches=[]
+for i in range(a-1):
+    for j in range(i+1,a):
+        for k in range(m):
+            matches.append([teams[i],teams[j]])
+        
+print(matches)
+pos=1
+random.shuffle(matches)
+for i in matches:
+    print("MATCH {} :{} vs {} ".format(pos,i[0],i[1]))
+    pos+=1
