@@ -1,0 +1,79 @@
+#recursion
+def primefactors(a):
+    if a==1:
+      return 
+    i=2
+    while a%i!=0:
+      i+=1
+    print(i,end="")
+    primefactor(a/i)
+a=int(input("enter user input:"))
+primefactors(a)
+#without recurion
+n=int(input("n:"))
+ans = []
+for i in range(2, n+1):
+    
+    while n % i == 0 and n > 0:
+        ans.append(i) 
+        
+        n = n // i
+
+for i in ans:
+    print(i,end=" ")
+#constructor
+class Rect:
+    def __init__(self,a,b):
+        self.area=a*b
+    def display(self):
+        print("area is",self.area)
+r1=Rect(20,30)
+r2=Rect(90,40)
+r2.display()
+r1.display()
+#constructor for area of circle
+class circle:
+    def __init__(self):
+        x=int(input("enter radius"))
+        self.r=x
+    def display(self):
+        print("Area is:",3.14*self.r**2)
+a=int(input("enter no of circle:"))
+l=[]
+for i in range(a):
+    c=circle()
+    l.append(c)
+    c.display()
+    print("____________________________________")
+#creating a linkedlist
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+        
+class LinkedList:
+    def __init__(self):
+        self.head=None
+    def insert(self,data):
+        newnode=Node(data)
+        if self.head==None:
+            self.head=newnode
+        else:
+            temp=self.head
+            while temp.next:
+                temp=temp.next
+            temp.next=newnode
+        
+    def display(self):
+        temp=self.head
+        while temp.next:
+            print(temp.data,end="->")
+            temp=temp.next
+            
+l=LinkedList()
+l.insert(100)
+l.insert(200)
+l.insert(300)
+l.insert(400)
+l.insert(500)
+l.display()
