@@ -1,0 +1,117 @@
+#leetcode problem
+x="AAACCDDDAAD"
+res=""
+c=1
+for i in range(len(x)):
+    if i+1<len(x) and x[i]==x[i+1]:
+        c+=1
+    else:
+        res+=x[i]
+        res+=str(c)
+        c=1
+    
+print(res)
+o/p:A3C2D3A2D1
+
+
+# Recuresion:
+#     fns calling itself 
+#     base cond -> exit of fns
+#     arg:should be diff
+#     backtracking
+#     nested recursion (more than 1 recursive call)
+#     top down approach 
+def fact(m):
+    if m<=0:
+        return 1
+    else:
+        return m*fact(m-1)
+print(fact(6))
+#backtracking
+def flower(a):
+    if a==4:
+        return 
+    print(a+10,end=" ")
+    flower(a+1) 
+    print(a,end="
+#code snippet
+def raju(a):
+    if a==1:
+        return 
+    a-=1
+    raju(a)
+    print("hai")
+    raju(a)
+raju(2)")
+flower(1)
+#codesnippet
+
+def raju(a):
+    if a==5:
+        return 1
+    b=raju(a+1)
+    print("hai")
+    return b+2
+res=raju(1)
+print(res)
+#qrcode 
+import qrcode
+
+qr = qrcode.QRCode()
+
+a = "hmph!"
+qr.add_data(a)
+qr.make(fit=True)
+
+res = qr.make_image(fill_color="black", back_color="white")
+res.save("ak.png")
+print("created")
+#oops
+oops
+1)var(4)
+2)class:container(method&obj)
+3)obj:member of class
+----------------------------------
+1)local var(has scope only in particular method)
+2)instance (global)-(every obj holds unique values)
+3)class var (global)-(every obj holds same value)
+4)complete global
+inside and outside the clss methods and variables should be invoked by object or class
+#oops pgm
+class abc:
+    num=100
+    def set_dim(self,a,b):
+        self.total=a+b+self.num or abc.num
+    def display(self):
+        print("Addition is",self.total)
+a=abc()
+b=abc()
+a.set_dim(50,30)
+b.set_dim(10,30)
+a.#code snippets
+x="india"
+class abc:
+    num=100
+    def set_dim(self,a,b,c,d):
+        self.tot=a+b+c
+        self.name=d
+    def display(self):
+        print("1,name is",self.name)
+        print("2.mark=",self.tot)
+        print("3.country",x)
+class abcd:
+    num=100
+    def set_dim(self,a,b,c,d):
+        self.tot=a+b+c
+        self.name=d
+    def display(self):
+        print("1,name is",self.name)
+        print("2.mark=",self.tot)
+        print("3.country",x)
+a=abc()
+b=abcd()
+a.set_dim(50,30,30,"vijay")
+b.set_dim(10,30,32,"pavi")
+a.display()
+b.display()
+b.display()
