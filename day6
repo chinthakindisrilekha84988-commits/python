@@ -1,0 +1,127 @@
+#code snipet
+a=1
+for i in range(2,5):
+    a=a+i
+    for j in range(i):
+        a=a+j
+        print(str(a),end=" ")
+    print()
+print(a)
+
+
+
+Functions:
+    block of code
+    inbuilt  fns,user def fns
+    Adv:
+    1)code reuse
+    2)readability
+    3)integration
+types:
+    1)without r and without A
+    2)without r and with A
+    3)with a and without r
+    4)with a and with r
+
+
+
+def fun():
+    s=int(input("entr your side"))
+    a=s*s
+    return a
+def rect(l,b):
+    
+    return l*b
+def cir():
+    r=int(input("entr radius"))
+    return 3.14*r*r
+def tri(b,h):
+    return 0.5*b*h
+l=[]
+while True:
+    print("1.sq")
+    print("2.rec")
+    print("3.cir")
+    print("4.tria")
+    print("5.exit")
+
+    a=int(input("enter ur choice"))
+
+    if a==1:
+        print("area of aq",fun())
+    elif a==2:
+        l=int(input("enter lenght"))
+        b=int(input("enter bre"))
+        print("area of rectangle:",rect(l,b))
+    elif a==3:
+        x=cir()
+        print("area of circle",x)
+    elif a==4:
+        b=int(input("enter base:"))
+        h=int(input("enter h8:"))
+        y=tri(b,h)
+        print("area of trianglr",y)
+    elif a>4:
+        print("over")
+        break
+
+
+
+
+#3 condns should be there 1)prime or not 2)single digits should be prime 3)sum of digits should be prime
+def prime(n):
+    if n<=1:
+        return False
+    else:
+        for i in range(2,n):
+            if n%i==0:
+                return False
+        return True
+def sod(n):
+    d=[int(i) for i in str(n)]
+    return sum(d)
+def every(n):
+    
+    for i in range(3):
+        r=n%10
+        n//=10
+        if not prime(r):
+            return False
+    return True
+for i in range(100,1000):
+    if prime(i) and prime(sod(i)) and every(i):
+        print(i,end=" ")
+
+#code snippet
+def adv(n):
+    for i in range(1,20):
+        if i%n==0:
+            return
+        else:
+            print("a")
+    print("b")
+adv(3)
+
+
+
+#coprimes and coprimes should not have common factors among each number and coprimes should follow pythagoreas theorem
+def cop(i,j):
+    return gcd(i,j)==1
+#mwthod1
+def gcd(a,b):
+    while b:
+        a,b=b,a%b
+    return a
+#method2
+def gcd(a,b):
+    while b!=0:
+        rem=a%b
+        a=b
+        b=rem
+    return a
+a=int(input("enter any num:"))
+for i in range(5,a):
+    for j in range(4,i):
+        for k in range(3,j):
+            if (j*j+k*k==i*i and cop(i,j) and cop(j,k) and cop(i,k)):
+                print(k,j,i)
