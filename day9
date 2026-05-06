@@ -1,0 +1,74 @@
+a="hi"*2
+print(a)
+
+#dict creating
+b=122333333333335
+d={}
+for i in str(b):
+    if i not in d:
+        d[i]=1
+    else:
+        d[i]+=1
+print(d)
+b={'A':2,'B':3,'C':3}
+A1=[i for i in b.keys()]
+B=[i[1] for i in b.items()]
+print(A1,B)
+
+#operations
+print(11<<2)
+print(13&5)
+#functions multiple  argument
+def abc(*args):
+    s=0
+    for i in args:
+        s+=i
+    print(s)
+abc(20,30)
+abc(10,24,66,78,46)
+
+#default arguments
+def ace(name="akshaya "):
+      print(name)
+ace(parthi)
+ace(kavi)
+ace()
+
+#keyword areguments
+def a(**kwargs):
+    print(kwargs)
+a(name="gill",score=40)
+o/p:{'name': 'gill', 'score': 40}
+
+#from googletrans import Translator
+t=Ttanslator()
+a=input("enter any word")
+b=input("enter any target lang")
+res=t.translate(a,des=b)
+print(res.text)
+#leetcode problem linkedlist cycle-1 141
+slow=head
+fast=head
+while fast and fast.next:
+slow=slow.next
+fast=fast.next.next
+if slow ==fast:
+    return True
+return False
+#leetcode 142
+if head is None or head.next is None:
+    return None
+slow=head
+fast=head
+while (fast is not None and fast.next is not None):
+    slow=slow.next
+    fast=fast.next.next
+    if slow==fast:
+        break
+if fast is  None or fast.next is None:
+    return None
+slow=head
+while fast!=slow:
+    slow=slow.next
+    fast=fast.next
+return slow
